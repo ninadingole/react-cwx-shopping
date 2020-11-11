@@ -1,24 +1,24 @@
 import React from 'react';
 
-import './header.styles.scss';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import CartIcon from '../cart-icon/cart-icon.component';
 
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
+
 const Header = ({ hidden }) => (
-    <div className='header'>
-        <Link to='/' className='logo-container'>
+    <HeaderContainer>
+        <LogoContainer>
             <Logo className='logo' />
-        </Link>
-        <div className='options'>
-            <Link className='option' to='/shop'>SHOP</Link>
-            <Link className='option' to='/contact'>CONTACT</Link>
+        </LogoContainer>
+        <OptionsContainer>
+            <OptionLink to='/shop'>SHOP</OptionLink>
+            <OptionLink to='/contact'>CONTACT</OptionLink>
             <CartIcon />
-        </div>
+        </OptionsContainer>
         { hidden ? null : <CartDropdown />}
-    </div>
+    </HeaderContainer>
 );
 
 
