@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import SignInComponent from "../../components/sign-in/sign-in.component";
 
